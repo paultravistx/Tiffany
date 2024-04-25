@@ -1,0 +1,280 @@
+<body>
+    <h1>Welcome to Tiff!!!</h1>
+    
+    <div class="Container">
+        <div id="canvas"></div>
+        
+       
+        
+        <div class="gameInfoCointainer">
+
+        
+            <div id="LiveScore">0</div>
+            <div id="gameSpeed">no data</div>
+
+        </div>
+        
+        
+   
+
+        <div class="menu">
+            <button id="play">Play</button>
+            <button id="squareMenu">square</button>
+            <button id="randomMenu">Random</button>
+        </div>
+    </div>
+
+</div>
+    <div id="boardtable"></div>
+    <input id="input">
+    <div id="log"></div>
+    <div id="nextSquareLine"></div>
+</body>
+<div id="popup" class="popup">
+    <span id="popupText" class="popup-text">100!</span>
+  </div>
+<style>
+body{
+    cursor: crosshair;
+    background-color: #de465f;
+}
+h1{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    left: 500px;
+    font-style: italic;
+    color:rgb(255, 255, 255);
+}
+.Container{
+    width: 100%;
+    height:100%;
+    border: 1px solid black;
+    display: flex;
+}
+#canvas{
+    background-color: #7289da;
+    width: 500px;
+    height:500px;
+    border:1px solid black;
+   
+    margin-left: 1%;
+}
+.gameInfoCointainer{
+    display: flex;
+    width: 100px;
+    height:100%;
+    border:1px solid black;
+}
+#LiveScore{
+    font-size: large;
+    font-weight: bold;
+    font-size: 70px;
+
+}
+.menu{
+ 
+
+    width: 50px;
+    height:10px;
+    border:1px solid black;
+    display: flex;
+    padding: 4%;
+    background-color: rgb(191, 224, 91);
+}
+#squareMenu{
+    width: 60px;
+    height:60px;
+    border:1px solid black;
+  
+
+}
+#randomMenu{
+    border:1px solid black;
+    width: 60px;
+    height:60px;
+    top:150px;
+    
+}
+
+
+
+
+
+
+#nextSquareLine{
+
+background-color: none;
+width: 120px;
+height:120px;
+border:1px solid red;
+
+padding: 10px;
+position: absolute;
+border-radius: 50%;
+}
+#nextSquareLine{
+ 
+    padding: 10px;
+    position: absolute;
+   width: 10px;
+   height: 100px;
+}
+
+#boardtable{
+    width: 50px;
+    height:100px;
+    border:1px solid black;
+    margin: auto;
+    padding: 4%;
+    position: absolute;
+    left: 1000px;
+    top:100px
+}
+
+#play{
+    width: 50px;
+    height: 50px;
+    
+    left: 500px;
+    top:50px;
+}
+
+
+#square{
+    cursor: crosshair;
+    border:1px solid black;
+
+    width: 60px;
+    height:60px;
+    border:1px solid black;
+  
+    padding: 10px;
+    position: absolute;
+
+}
+
+#circle{
+    width:100px;
+    height:100px;
+    border:1px solid black;
+    background-color: red;
+    padding: 10px;
+
+    border:1px solid black;
+
+
+ 
+}
+
+#GhostSquare{
+    width: 50px;
+height:50px;
+border:1px solid red;
+border:1px solid black;
+
+padding: 10px;
+position: absolute;
+}
+#squareLive{
+    cursor: crosshair;
+    border:1px solid black;
+
+width: 60px;
+height:60px;
+border:1px solid green;
+
+padding: 10px;
+position: absolute;
+
+}
+#GhostSquareOutline{
+    cursor: crosshair;
+    border:1px solid black;
+
+width: 60px;
+height:60px;
+
+background-color: none;
+padding: 10px;
+position: absolute;
+  z-index: -1;
+
+
+}
+.popup {
+  position: absolute;
+ margin: auto;
+ border:1px solid black;
+
+  transform: translate(-50%, -50%);
+ width: 50px;
+ height: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1;
+ 
+ opacity: 90%;
+  background-color: #0CB1C4;
+  animation-name:spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform:scale(100%)
+    }
+    to {
+        transform:scale(50%)
+    }
+}
+
+.popup-text {
+  font-size: 24px;
+  color: #000000; /* Bright star color */
+}
+
+/* Animation */
+@keyframes popupAnimation {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-30px);
+  }
+}
+.clicksquare {
+    position: absolute;
+ margin: auto;
+ border:1px solid black;
+
+  transform: translate(-50%, -50%);
+  animation-name: fart;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+@keyframes fart {
+    from {
+        transform:scale(100%)
+    }
+    to {
+        transform:scale(50%)
+    }
+}
+
+</style>
+<script src="js.js"></script>
+
